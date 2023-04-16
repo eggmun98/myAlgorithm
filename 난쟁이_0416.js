@@ -10,6 +10,7 @@
 // ▣ 출력예제 1
 // 20 7 23 19 10 8 13
 
+// 내 풀이
 let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
 function solution(arr) {
   let count = 0;
@@ -24,3 +25,25 @@ function solution(arr) {
   }
 }
 solution(arr);
+
+// 다른 사람 풀이
+function solution(arr) {
+  let answer = arr;
+  let sum = answer.reduce((a, b) => a + b, 0);
+  for (let i = 0; i < 8; i++) {
+    for (let j = i + 1; j < 9; j++) {
+      if (sum - (answer[i] + answer[j]) == 100) {
+        answer.splice(j, 1);
+        answer.splice(i, 1);
+      }
+    }
+  }
+  return answer;
+}
+
+// 배운점
+// for (let i = 0; i < 8; i++) 여기서 난쟁이는 9명이니까 i는 8명까지만 확인하면 된다.
+// for (let j = i + 1; j < 9; j++) 또 나는 count라는 변수를 만들어서 그 다음 확인 하는 방법을 만들었는데
+// 이 분은 i= i +1로 해서 다음 확인 방법을 더 효율적으로 하셨다.
+// answer.splice(j, 1), answer.splice(i, 1); 이 코드에서 answer.splice(j, 1)을 먼저 해준 이유는
+// answer.splice(i, 1)부터 먼저 적으면 배열이 앞당겨져서 정확한 결과값이 안나오기 때문이다.

@@ -17,7 +17,7 @@
 number = [25, 23, 11, 47, 53, 17, 33];
 number2 = [12, 20, 54, 30, 87, 91, 30];
 
-// 1번째 풀이
+// 내 풀이
 const myFn1 = (day, num) => {
   let count = 0;
   for (let i = 0; i < num.length; i++) {
@@ -27,8 +27,9 @@ const myFn1 = (day, num) => {
   }
   return count;
 };
+myFn1(3, number);
 
-// 2번째 풀이
+// 다른 사람 풀이
 const myFn2 = (day, num) => {
   let count = 0;
   for (let i = 0; i < num.length; i++) {
@@ -38,7 +39,7 @@ const myFn2 = (day, num) => {
   }
   return count;
 };
-myFn1(3, number);
-myFn1(0, number2);
-myFn2(3, number);
-myFn2(0, number2);
+myFn2(0, number);
+
+// 배운점
+// 숫자를 10으로 나눠서 나머지를 구하면 일의 자리를 구할 수 있다.

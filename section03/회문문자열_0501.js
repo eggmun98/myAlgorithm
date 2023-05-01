@@ -37,6 +37,20 @@ function solution(s) {
   return answer;
 }
 
+// 다른 사람 풀이2
+function solution(s) {
+  let answer = "YES";
+  s = s.toLowerCase();
+  if (
+    s
+      .split("")
+      .reverse()
+      .join("" !== s)
+  )
+    return "NO";
+  return answer;
+}
+
 // 회고
 // 처음에 나도 반복문으로 풀려고 하였다가 안풀어져서 메소드로 간단하게 풀었다.
 // 너무 메소드에 의지안하고 순수 javaScript 문법으로 풀려고 노력을 해야겠다.

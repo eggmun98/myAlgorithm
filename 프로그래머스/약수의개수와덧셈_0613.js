@@ -44,6 +44,20 @@ function solution(left, right) {
   return answer;
 }
 
+// 내 풀이2
+function solution(left, right) {
+  const divisorFn = (num) => {
+    let count = 1;
+    for (let i = 1; i < num; i++) !(num % i) && count++;
+    return count;
+  };
+
+  let answer = 0;
+  for (let i = left; i <= right; i++)
+    !(divisorFn(i) % 2) ? (answer += i) : (answer -= i);
+  return answer;
+}
+
 // 회고
 // 나는 이번 문제를 풀기 위해 약수의 갯수를 구하는 함수를 만들었다.
 // 그리고 그 함수를 또 다시 반복문을 돌려서 값을 비교하여

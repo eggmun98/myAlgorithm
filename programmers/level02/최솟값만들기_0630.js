@@ -8,7 +8,7 @@
 // B 배열을 내림차순으로 정렬합니다.
 // 반복문을 이용하여 새로운 배열들의 요소들을 곱하고 더합니다.
 
-// 3. 풀이
+// 3-1. 풀이
 function solution(a, b) {
   newA = a.sort((a, b) => a - b);
   newB = b.slice().sort((a, b) => b - a);
@@ -18,6 +18,13 @@ function solution(a, b) {
   }
   return answer;
 }
+
+// 3-2. 풀이2
+function solution(a, b) {
+  newA = a.sort((a, b) => a - b);
+  newB = b.sort((a, b) => b - a);
+  return newA.reduce((a, b, c) => a + b * newB[c], 0);
+} // answer 변수를 없애고 reduce를 이용하여 바로 리턴값을 출력하는 방법의 풀이이다.
 
 // 4. 회고
 // 처음 모든 경우의 수를 계산해서 최종 값을 리턴을 할까 고민을 하였다.

@@ -44,30 +44,19 @@
 // step 4: 결과 배열 반환
 // 시간복잡도: O(N) (모든 노드를 한 번씩 방문)
 // 공간복잡도: O(W) (최대 너비 W만큼 큐에 저장)
-//
-// ---
-//
+
 // 3. 풀이
 /**
-
 Definition for a binary tree node.
-
 function TreeNode(val, left, right) {
-
 this.val = (val===undefined ? 0 : val)
-
 this.left = (left===undefined ? null : left)
-
 this.right = (right===undefined ? null : right)
-
-
 }
 */
 
 /**
-
 @param {TreeNode} root
-
 @return {number[][]}
 */
 var zigzagLevelOrder = function(root) {
@@ -92,8 +81,7 @@ var zigzagLevelOrder = function(root) {
     // 현재 레벨 방향에 맞게 결과에 추가
     result.push(leftToRight ? level : level.reverse());
     leftToRight = !leftToRight; // 다음 레벨은 방향 반전
-    
-    
+     
     }
     
     return result;
